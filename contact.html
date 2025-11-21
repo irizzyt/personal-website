@@ -92,22 +92,6 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Iris Turfle</a>
             <div class="nav-actions">
-                <button type="button" class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
-                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
                 <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
                     <span class="nav-toggle__icon">
                         <span></span>
@@ -149,13 +133,12 @@
     <section class="contact" aria-labelledby="contact-heading">
         <div class="container">
             <div class="grid grid--12">
-                <div class="grid__col grid__col--6">
+                <div class="grid__col grid__col--12">
                     <div class="contact-info">
                         <h2 id="contact-heading" class="section-heading">Get in Touch</h2>
                         <p class="contact-info__text">
                             I'm always open to discussing new opportunities, interesting projects, 
-                            or potential collaborations. Feel free to reach out through the form 
-                            or directly via email.
+                            or potential collaborations. Feel free to reach out directly via email.
                         </p>
                         <div class="contact-details">
                             <div class="contact-detail">
@@ -187,60 +170,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__col grid__col--6">
-                    <form class="contact-form" id="contactForm" aria-label="Contact form">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                class="form-input" 
-                                required
-                                aria-required="true"
-                                aria-describedby="name-error"
-                            >
-                            <span id="name-error" class="form-error" role="alert" aria-live="polite"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                class="form-input" 
-                                required
-                                aria-required="true"
-                                aria-describedby="email-error"
-                            >
-                            <span id="email-error" class="form-error" role="alert" aria-live="polite"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                class="form-textarea" 
-                                rows="6"
-                                required
-                                aria-required="true"
-                                aria-describedby="message-error"
-                            ></textarea>
-                            <span id="message-error" class="form-error" role="alert" aria-live="polite"></span>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--full">
-                            Send Message
-                        </button>
-                        <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
-                    </form>
-                </div>
             </div>
         </div>
     </section>
     </main>
 
     <script src="scripts/main.js"></script>
-    <script src="scripts/contact.js"></script>
 </body>
 </html>
 

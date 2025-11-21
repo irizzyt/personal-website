@@ -18,7 +18,6 @@
     initAccessibility();
     initPerformanceOptimizations();
     initMobileNav();
-    initThemeToggle();
     initPageTransitions();
     initNavigation();
     initLinkValidation();
@@ -184,12 +183,6 @@
    */
   function initAccessibility() {
     // Add aria labels to navbar icons
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle && !themeToggle.getAttribute('aria-label')) {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      themeToggle.setAttribute('aria-label', currentTheme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-    }
-
     const navToggle = document.querySelector('.nav-toggle');
     if (navToggle && !navToggle.getAttribute('aria-label')) {
       navToggle.setAttribute('aria-label', 'Toggle navigation menu');
@@ -402,80 +395,6 @@
     }
   }
 
-  /**
-   * Theme Toggle with Simple Sun Animation
-   */
-  function initThemeToggle() {
-    const themeToggle = document.getElementById('themeToggle');
-    if (!themeToggle) return;
-
-    // Apply saved theme or use fallback
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    
-    document.documentElement.setAttribute('data-theme', initialTheme);
-    updateAriaLabel(themeToggle, initialTheme);
-
-    // Create sun container with rays, sun, and shading elements
-    const sunContainer = document.createElement('div');
-    sunContainer.className = 'theme-sun-container';
-    sunContainer.setAttribute('aria-hidden', 'true');
-    
-    const sunRays1 = document.createElement('div');
-    sunRays1.className = 'theme-sun-rays theme-sun-rays-1';
-    
-    const sunRays2 = document.createElement('div');
-    sunRays2.className = 'theme-sun-rays theme-sun-rays-2';
-    
-    const sunShading = document.createElement('div');
-    sunShading.className = 'theme-sun-shading';
-    
-    const sunElement = document.createElement('div');
-    sunElement.className = 'theme-sun';
-    
-    sunContainer.appendChild(sunRays1);
-    sunContainer.appendChild(sunRays2);
-    sunContainer.appendChild(sunElement);
-    sunElement.appendChild(sunShading);
-    document.body.appendChild(sunContainer);
-
-    // Theme toggle click handler
-    themeToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      
-      // Reset and start animation
-      sunContainer.classList.remove('active');
-      void sunContainer.offsetWidth; // Force reflow
-      sunContainer.classList.add('active');
-      
-      // Switch theme at midpoint (750ms of 1500ms)
-      setTimeout(() => {
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateAriaLabel(themeToggle, newTheme);
-      }, 750);
-      
-      // Hide after animation completes
-      setTimeout(() => {
-        sunContainer.classList.remove('active');
-      }, 1500);
-    });
-  }
-
-  /**
-   * Update aria label for accessibility
-   */
-  function updateAriaLabel(button, theme) {
-    const label = theme === 'dark' 
-      ? 'Switch to light mode' 
-      : 'Switch to dark mode';
-    button.setAttribute('aria-label', label);
-  }
 
   /**
    * Smooth Page Transitions

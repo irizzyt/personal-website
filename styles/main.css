@@ -127,79 +127,6 @@
   --color-shadow: rgba(0, 0, 0, 0.3);
 }
 
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  padding: var(--space-1);
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: var(--border-radius-md);
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  color: var(--color-text-secondary);
-  margin-left: var(--space-2);
-  position: relative;
-  flex-shrink: 0;
-}
-
-.theme-toggle:hover,
-.theme-toggle:focus {
-  border-color: var(--color-soft-cyan);
-  color: var(--color-text-primary);
-  background-color: rgba(242, 244, 247, 0.1);
-}
-
-.theme-toggle:focus-visible {
-  outline: var(--focus-ring);
-  outline-offset: var(--focus-ring-offset);
-}
-
-.theme-toggle svg {
-  width: 20px;
-  height: 20px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity var(--transition-fast), transform var(--transition-normal);
-}
-
-.theme-toggle .icon-sun {
-  display: block;
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.theme-toggle .icon-moon {
-  display: block;
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-
-:root[data-theme="dark"] .theme-toggle .icon-sun {
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-
-:root[data-theme="dark"] .theme-toggle .icon-moon {
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(-90deg);
-}
-
-/* Light mode - moon visible */
-:root:not([data-theme="dark"]) .theme-toggle .icon-moon {
-  opacity: 1;
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-
-:root:not([data-theme="dark"]) .theme-toggle .icon-sun {
-  opacity: 0;
-  transform: translate(-50%, -50%) rotate(90deg);
-}
 
 /* ============================================
    RESET & BASE
@@ -290,194 +217,6 @@ input, textarea, select {
 }
 
 /* Theme Sun Animation - Simple circular rotation */
-.theme-sun-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 100vw;
-  height: 100vh;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 99999;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.theme-sun-container.active {
-  opacity: 1;
-  visibility: visible;
-  animation: sunRotate 1500ms ease-in-out forwards;
-}
-
-/* Sun rays - positioned behind the sun, more prominent, centered on sun */
-.theme-sun-rays {
-  position: absolute;
-  /* Match sun's positioning exactly: top:0, left:50%, with negative margins for centering */
-  top: 0;
-  left: 50%;
-  width: 210px;  /* 25% smaller: 280px * 0.75 */
-  height: 210px;
-  margin-left: -105px;  /* half of 210px */
-  margin-top: -105px;
-  border-radius: 50%;
-  pointer-events: none;
-  transform-origin: center center;
-  z-index: 1;
-}
-
-.theme-sun-rays-1 {
-  background: 
-    repeating-conic-gradient(
-      from 0deg at 50% 50%,
-      transparent 0deg 8deg,
-      rgba(255, 255, 0, 0.5) 8deg 10deg,
-      rgba(255, 215, 0, 0.6) 10deg 11deg,
-      transparent 11deg 16deg
-    );
-  animation: sunRays 3s linear infinite;
-  opacity: 0.8;
-}
-
-.theme-sun-rays-2 {
-  background: 
-    repeating-conic-gradient(
-      from 0deg at 50% 50%,
-      transparent 0deg 7deg,
-      rgba(255, 200, 0, 0.4) 7deg 9deg,
-      rgba(255, 255, 100, 0.5) 9deg 10deg,
-      transparent 10deg 14deg
-    );
-  animation: sunRays 4s linear infinite reverse;
-  opacity: 0.7;
-  width: 232.5px;  /* 25% smaller: 310px * 0.75 */
-  height: 232.5px;
-  margin-left: -116.25px;  /* half of 232.5px */
-  margin-top: -116.25px;
-}
-
-.theme-sun {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 162.75px;  /* 25% smaller: 217px * 0.75 */
-  height: 162.75px;
-  margin-left: -81.375px;  /* half of 162.75px */
-  margin-top: -81.375px;
-  border-radius: 50%;
-  background: 
-    radial-gradient(
-      circle at 35% 35%,
-      #FFFFFF 0%,
-      #FFFFE0 2%,
-      #FFFF00 6%,
-      #FFE135 12%,
-      #FFD700 20%,
-      #FFA500 35%,
-      #FF8C00 50%,
-      #FF7F00 65%,
-      #FF6B35 78%,
-      #FF5722 88%,
-      #FF4500 100%
-    ),
-    radial-gradient(
-      ellipse at 40% 30%,
-      rgba(255, 255, 255, 0.3) 0%,
-      transparent 25%
-    ),
-    radial-gradient(
-      ellipse at 25% 45%,
-      rgba(255, 230, 0, 0.2) 0%,
-      transparent 30%
-    );
-  box-shadow: 
-    0 0 90px rgba(255, 255, 0, 1),
-    0 0 135px rgba(255, 215, 0, 0.95),
-    0 0 210px rgba(255, 165, 0, 0.85),
-    0 0 285px rgba(255, 140, 0, 0.7),
-    inset 0 0 45px rgba(255, 200, 0, 0.3),
-    inset -15px -15px 30px rgba(255, 100, 0, 0.2);
-  transform-origin: 50% calc(50vh + 81.375px);  /* 108.5px * 0.75 */
-  z-index: 3;
-  position: relative;
-}
-
-@keyframes sunRays {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Shading on the sun - fixed at bottom, doesn't rotate */
-.theme-sun-shading {
-  position: absolute;
-  /* Position shading on the sun itself */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  /* Subtle shadow at bottom of sun */
-  background: radial-gradient(
-    ellipse at 50% 75%,
-    transparent 0%,
-    rgba(0, 0, 0, 0.1) 40%,
-    rgba(0, 0, 0, 0.2) 60%,
-    rgba(0, 0, 0, 0.3) 80%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 4;
-  /* No animation - stays fixed at bottom */
-}
-
-@keyframes sunRotate {
-  0% {
-    transform: translate(-50%, -50%) rotate(-90deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(90deg);
-  }
-}
-
-
-/* Full arc animation: sun travels in a complete semicircle around the screen */
-/* Starting from bottom-left, arcing up and over, ending at bottom-right */
-
-@media (max-width: 768px) {
-  .theme-sun {
-    width: 108.75px;  /* 25% smaller: 145px * 0.75 */
-    height: 108.75px;
-    margin-left: -54.375px;  /* half of 108.75px */
-    margin-top: -54.375px;
-    transform-origin: 50% calc(50vh + 54.375px);  /* 72.5px * 0.75 */
-  }
-  
-  .theme-sun-rays {
-    /* Match sun's positioning exactly on mobile */
-    top: 0;
-    width: 142.5px;  /* 25% smaller: 190px * 0.75 */
-    height: 142.5px;
-    margin-left: -71.25px;  /* half of 142.5px */
-    margin-top: -71.25px;
-  }
-  
-  .theme-sun-rays-2 {
-    width: 157.5px;  /* 25% smaller: 210px * 0.75 */
-    height: 157.5px;
-    margin-left: -78.75px;  /* half of 157.5px */
-    margin-top: -78.75px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .theme-sun-container.active {
-    animation: none;
-    transition: opacity 200ms ease-out;
-  }
-}
 
 body {
   font-family: var(--font-family-primary);
@@ -1679,7 +1418,9 @@ a:focus {
 }
 
 .contact-info {
-  padding-right: var(--space-6);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .contact-info__text {
@@ -2004,7 +1745,8 @@ a:focus {
   
   .contact-info {
     padding-right: 0;
-    margin-bottom: var(--space-8);
+    margin-bottom: 0;
+    max-width: 100%;
   }
   
   .contact-form {
