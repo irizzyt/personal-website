@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Iris Turfle, project details, case study, financial analysis, product strategy, technical projects, portfolio">
+    <meta name="description" content="Project details - financial analysis and product strategy work. Detailed case study of technical projects.">
+    <meta name="author" content="Iris Turfle">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Detail - Iris Turfle Portfolio</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Project Detail - Iris Turfle Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://iristurfle.dev/project-detail.html">
+    <meta property="og:description" content="Project details - financial analysis and product strategy work. Detailed case study of technical projects.">
+    <meta property="og:image" content="https://iristurfle.dev/thumbnail.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/svg+xml">
+    
+    <!-- LinkedIn -->
+    <meta property="linkedin:owner" content="iristurfle">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body data-theme="dark">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Signature Vertical Line -->
+    <div class="signature-line" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Iris Turfle</a>
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle" aria-label="Toggle theme" id="themeToggle">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+                    <span class="nav-toggle__icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+            </div>
+            <ul class="nav-list" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="activities.html" class="nav-link">Activities</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="WebsiteResume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb__list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li aria-current="page">Project Detail</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <section class="project-header">
+        <div class="container">
+            <a href="projects.html" class="project-header__back">
+                ← Back to Projects
+            </a>
+            <h1 class="project-header__title">Financial Dashboard Redesign</h1>
+            <p class="project-header__subtitle">Increased user engagement by 40%</p>
+            <div class="project-header__tags">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">D3.js</span>
+                <span class="tag">Redux</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main id="main-content">
+    <section class="project-content" aria-label="Project details">
+        <div class="container">
+            <div class="grid grid--12">
+                <div class="grid__col grid__col--8">
+                    <div class="project-detail">
+                        <div class="project-detail__image">
+                            <div class="image-placeholder" style="height: 400px;"></div>
+                        </div>
+                        
+                        <div class="project-detail__section">
+                            <h2 class="project-detail__heading">Problem</h2>
+                            <p class="project-detail__text">
+                                The existing financial dashboard suffered from poor data visualization, 
+                                slow load times, and low user engagement. Users were unable to quickly 
+                                understand key metrics and trends, leading to decreased platform usage.
+                            </p>
+                        </div>
+
+                        <div class="project-detail__section">
+                            <h2 class="project-detail__heading">Actions</h2>
+                            <ul class="project-detail__list">
+                                <li>Redesigned information architecture for better data hierarchy</li>
+                                <li>Implemented real-time data visualization using D3.js</li>
+                                <li>Optimized performance with React memoization and code splitting</li>
+                                <li>Created responsive design system for cross-device compatibility</li>
+                                <li>Conducted user testing sessions to validate improvements</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-detail__section">
+                            <h2 class="project-detail__heading">Impact</h2>
+                            <div class="metrics-grid">
+                                <div class="metric-card">
+                                    <div class="metric-card__value">40%</div>
+                                    <div class="metric-card__label">Increase in User Engagement</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-card__value">2.3s</div>
+                                    <div class="metric-card__label">Average Load Time</div>
+                                </div>
+                                <div class="metric-card">
+                                    <div class="metric-card__value">85%</div>
+                                    <div class="metric-card__label">User Satisfaction Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__col grid__col--4">
+                    <div class="project-sidebar">
+                        <div class="project-sidebar__section">
+                            <h3 class="project-sidebar__title">Client</h3>
+                            <p class="project-sidebar__text">Tech Financial Corp</p>
+                        </div>
+                        <div class="project-sidebar__section">
+                            <h3 class="project-sidebar__title">Timeline</h3>
+                            <p class="project-sidebar__text">3 months</p>
+                        </div>
+                        <div class="project-sidebar__section">
+                            <h3 class="project-sidebar__title">Role</h3>
+                            <p class="project-sidebar__text">Lead Product Designer & Developer</p>
+                        </div>
+                        <div class="project-sidebar__section">
+                            <h3 class="project-sidebar__title">Technologies</h3>
+                            <div class="project-sidebar__tags">
+                                <span class="tag">React</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">D3.js</span>
+                                <span class="tag">Redux</span>
+                                <span class="tag">Styled Components</span>
+                                <span class="tag">Jest</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
