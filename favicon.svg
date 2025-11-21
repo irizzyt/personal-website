@@ -7,13 +7,16 @@
   </defs>
   <!-- Dark background -->
   <rect width="100" height="100" fill="#0A1520" rx="20"/>
-  <!-- "IT" Monogram - centered -->
-  <!-- Letter I -->
-  <rect x="20" y="20" width="8" height="12" rx="2" fill="url(#grad)"/>
-  <rect x="20" y="52" width="8" height="12" rx="2" fill="url(#grad)"/>
-  <rect x="22" y="32" width="4" height="20" rx="2" fill="url(#grad)"/>
-  
-  <!-- Letter T -->
-  <rect x="38" y="20" width="16" height="6" rx="2" fill="url(#grad)"/>
-  <rect x="43" y="26" width="6" height="38" rx="2" fill="url(#grad)"/>
+  <!-- "IT" Logo - Maximum Size, Perfectly Centered -->
+  <!-- Logo: ~88px wide, ~60px tall. Canvas center: (50, 50). Position: (6, 20) -->
+  <g transform="translate(6, 20)">
+    <!-- Letter I - Maximum size proportions -->
+    <rect x="0" y="0" width="20" height="10" rx="3" fill="url(#grad)"/>
+    <rect x="0" y="50" width="20" height="10" rx="3" fill="url(#grad)"/>
+    <rect x="6" y="10" width="8" height="40" rx="3" fill="url(#grad)"/>
+    
+    <!-- Letter T - Maximum size (10px gap) -->
+    <rect x="30" y="0" width="28" height="10" rx="3" fill="url(#grad)"/>
+    <rect x="41" y="10" width="10" height="50" rx="3" fill="url(#grad)"/>
+  </g>
 </svg>
