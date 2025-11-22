@@ -38,9 +38,15 @@
     
     <!-- LinkedIn -->
     <meta property="linkedin:owner" content="iristurfle">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="thumbnail.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     
     <!-- Structured Data (JSON-LD) -->
@@ -128,56 +134,60 @@
     <div class="signature-line" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Iris Turfle</a>
-            <div class="nav-actions">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-                <span class="nav-toggle__icon">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </span>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Iris Turfle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebsiteResume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav-list" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
-                <li><a href="activities.html" class="nav-link">Activities</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="WebsiteResume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Page Header -->
     <main id="main-content">
-    <section class="page-header">
+    <section class="page-header py-5" style="padding-top: 100px !important;">
         <div class="container">
-            <div class="page-header__thumbnail">
-                <img src="thumbnail.svg" alt="Iris Turfle Logo" class="thumbnail-image">
-            </div>
-            <h1 class="page-header__title">Projects</h1>
-            <p class="page-header__subtitle">My technical projects demonstrating analytical thinking, problem-solving, and practical application of skills.</p>
+            <h1 class="page-header__title text-center mb-3">Projects</h1>
+            <p class="page-header__subtitle text-center">My technical projects demonstrating analytical thinking, problem-solving, and practical application of skills.</p>
         </div>
     </section>
 
     <!-- Projects Grid -->
-    <section class="projects-grid" aria-label="Project portfolio">
+    <section class="projects-grid py-5" aria-label="Project portfolio">
         <div class="container">
-            <div class="grid grid--12">
+            <div class="row g-4">
                 <!-- Crisis Tracker Project -->
-                <div class="grid__col grid__col--12">
-                    <article id="crisis-tracker" class="project-block">
-                        <div class="project-block__header">
-                            <h2 class="project-block__title">Crisis Tracker</h2>
-                            <div class="project-block__tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Data Analysis</span>
-                                <span class="tag">API Integration</span>
+                <div class="col-12">
+                    <article id="crisis-tracker" class="card project-block">
+                        <div class="card-body">
+                            <div class="project-block__header mb-4 pb-3 border-bottom">
+                                <h2 class="project-block__title mb-3">Crisis Tracker</h2>
+                                <div class="project-block__tags d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">Python</span>
+                                    <span class="badge bg-secondary">Data Analysis</span>
+                                    <span class="badge bg-secondary">API Integration</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project-block__content">
+                            <div class="project-block__content">
                             <div class="project-block__section">
                                 <h3 class="project-block__heading">Description</h3>
                                 <p class="project-block__text">
@@ -208,9 +218,9 @@
                                 </p>
                             </div>
 
-                            <div class="project-block__section project-block__github">
-                                <h3 class="project-block__heading">View on GitHub</h3>
-                                <a href="https://github.com/irizzyt/crisis-tracker" class="github-link" target="_blank" rel="noopener noreferrer" aria-label="View Crisis Tracker repository on GitHub">
+                            <div class="project-block__section project-block__github mt-4 pt-4 border-top">
+                                <h3 class="project-block__heading mb-3">View on GitHub</h3>
+                                <a href="https://github.com/irizzyt/crisis-tracker" class="btn btn-outline-light d-inline-flex align-items-center gap-2 github-link" target="_blank" rel="noopener noreferrer" aria-label="View Crisis Tracker repository on GitHub">
                                     <svg class="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                     </svg>
@@ -223,24 +233,26 @@
                                 </a>
                             </div>
                         </div>
+                        </div>
                     </article>
                 </div>
 
                 <!-- Monte Carlo Simulation Project -->
-                <div class="grid__col grid__col--12">
-                    <article id="monte-carlo" class="project-block">
-                        <div class="project-block__header">
-                            <h2 class="project-block__title">Monte Carlo Simulation for Portfolio Construction</h2>
-                            <div class="project-block__tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Finance</span>
-                                <span class="tag">Simulation</span>
-                                <span class="tag">Statistical Analysis</span>
-                                <span class="tag">NumPy</span>
-                                <span class="tag">Pandas</span>
+                <div class="col-12">
+                    <article id="monte-carlo" class="card project-block">
+                        <div class="card-body">
+                            <div class="project-block__header mb-4 pb-3 border-bottom">
+                                <h2 class="project-block__title mb-3">Monte Carlo Simulation for Portfolio Construction</h2>
+                                <div class="project-block__tags d-flex flex-wrap gap-2">
+                                    <span class="badge bg-secondary">Python</span>
+                                    <span class="badge bg-secondary">Finance</span>
+                                    <span class="badge bg-secondary">Simulation</span>
+                                    <span class="badge bg-secondary">Statistical Analysis</span>
+                                    <span class="badge bg-secondary">NumPy</span>
+                                    <span class="badge bg-secondary">Pandas</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="project-block__content">
+                            <div class="project-block__content">
                             <div class="project-block__section">
                                 <h3 class="project-block__heading">What It Does</h3>
                                 <p class="project-block__text">
@@ -275,9 +287,9 @@
                                 </ul>
                             </div>
 
-                            <div class="project-block__section project-block__github">
-                                <h3 class="project-block__heading">View on GitHub</h3>
-                                <a href="https://github.com/irizzyt/monte-carlo-simulation" class="github-link" target="_blank" rel="noopener noreferrer" aria-label="View Monte Carlo Simulation repository on GitHub">
+                            <div class="project-block__section project-block__github mt-4 pt-4 border-top">
+                                <h3 class="project-block__heading mb-3">View on GitHub</h3>
+                                <a href="https://github.com/irizzyt/monte-carlo-simulation" class="btn btn-outline-light d-inline-flex align-items-center gap-2 github-link" target="_blank" rel="noopener noreferrer" aria-label="View Monte Carlo Simulation repository on GitHub">
                                     <svg class="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                                     </svg>
@@ -290,6 +302,7 @@
                                 </a>
                             </div>
                         </div>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -297,6 +310,8 @@
     </section>
     </main>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

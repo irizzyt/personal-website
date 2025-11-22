@@ -38,9 +38,15 @@
     
     <!-- LinkedIn -->
     <meta property="linkedin:owner" content="iristurfle">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="thumbnail.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     
     <!-- Structured Data (JSON-LD) -->
@@ -88,53 +94,60 @@
     <div class="signature-line" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Iris Turfle</a>
-            <div class="nav-actions">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-                    <span class="nav-toggle__icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Iris Turfle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebsiteResume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav-list" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="activities.html" class="nav-link active">Activities</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="WebsiteResume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+    <nav aria-label="breadcrumb" class="py-3" style="padding-top: 80px !important;">
         <div class="container">
-            <ol class="breadcrumb__list">
-                <li><a href="index.html">Home</a></li>
-                <li aria-current="page">Activities</li>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Activities</li>
             </ol>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header py-5">
         <div class="container">
-            <h1 class="page-header__title">Activities</h1>
-            <p class="page-header__subtitle">Extracurricular activities and volunteer work demonstrating leadership, initiative, and community impact.</p>
+            <h1 class="page-header__title text-center mb-3">Activities</h1>
+            <p class="page-header__subtitle text-center">Extracurricular activities and volunteer work demonstrating leadership, initiative, and community impact.</p>
         </div>
     </section>
 
     <!-- Activities List -->
     <main id="main-content">
-    <section class="activities-list" aria-label="Activities and volunteer work">
+    <section class="activities-list py-5" aria-label="Activities and volunteer work">
         <div class="container">
             <div class="activities-container">
                 <!-- Financial TikTok Content Creator -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Financial Content Creator</h2>
                         <span class="activity-item__org">TikTok</span>
@@ -144,10 +157,12 @@
                         Create and manage a financial education TikTok account generating over 200K monthly impressions; 
                         translate complex financial concepts into accessible content, building financial literacy for diverse audiences.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Finance & Operations Intern -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Finance & Operations Intern</h2>
                         <span class="activity-item__org">Greensboro Grasshoppers</span>
@@ -157,10 +172,12 @@
                         Supported financial tracking, budgeting, and daily operations for a professional baseball organization; 
                         gained early exposure to business management and applied economics in a real-world setting.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Vice President of Roleplay, DECA -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Vice President of Roleplay</h2>
                         <span class="activity-item__org">DECA</span>
@@ -170,10 +187,12 @@
                         Led chapter roleplay preparation, organized workshops, and trained members in business strategy and 
                         decision-making; contributed to competitive success and member development.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Treasurer & Competitor, Speech and Debate Team -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Treasurer & Competitor</h2>
                         <span class="activity-item__org">Speech and Debate Team</span>
@@ -183,10 +202,12 @@
                         Managed team finances, coordinated fundraisers, and competed in regional debate tournaments; 
                         strengthened analytical thinking, persuasion, and argumentation skills.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Lead Student Ambassador, New Arrivals Institute Film Festival -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Lead Student Ambassador</h2>
                         <span class="activity-item__org">New Arrivals Institute Film Festival</span>
@@ -196,10 +217,12 @@
                         Coordinated student involvement and logistics for a community-focused nonprofit event supporting 
                         immigrant and refugee storytelling.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Junior Literary Magazine Editor, Publishing Club -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Junior Literary Magazine Editor</h2>
                         <span class="activity-item__org">Publishing Club</span>
@@ -209,10 +232,12 @@
                         Oversaw publication design and planning for school yearbook and literary magazine production; 
                         collaborated with advisor to meet deadlines and administrative constraints.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Private English Tutor -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Private English Tutor</h2>
                         <span class="activity-item__org">Independent</span>
@@ -222,10 +247,12 @@
                         Independently tutored students to strengthen writing and critical thinking, applying communication 
                         and management skills in a paid, self-organized role.
                     </p>
+                    </div>
                 </article>
 
                 <!-- First Place Regional Winner, The Quill Writing Competition -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">First Place Regional Winner</h2>
                         <span class="activity-item__org">The Quill Writing Competition</span>
@@ -234,10 +261,12 @@
                     <p class="activity-item__outcome">
                         Recognized for excellence in editorial writing and clear analytical expression.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Volunteer Camp Counselor, Glenwood Together -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Volunteer Camp Counselor</h2>
                         <span class="activity-item__org">Glenwood Together</span>
@@ -246,10 +275,12 @@
                     <p class="activity-item__outcome">
                         Mentored children in community-based summer programs focused on education and leadership.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Code Club Camp Volunteer -->
-                <article class="activity-item">
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
                     <div class="activity-item__header">
                         <h2 class="activity-item__role">Code Club Volunteer and Member</h2>
                         <span class="activity-item__org">Summer Technology Programs</span>
@@ -258,24 +289,29 @@
                     <p class="activity-item__outcome">
                         Assisted in teaching coding and problem-solving skills to students in technology summer programs.
                     </p>
+                    </div>
                 </article>
 
                 <!-- Vacation Bible School (VBS) Volunteer -->
-                <article class="activity-item">
-                    <div class="activity-item__header">
-                        <h2 class="activity-item__role">Vacation Bible School (VBS) Volunteer</h2>
-                        <span class="activity-item__org">Community Youth Programs</span>
-                        <time class="activity-item__date" datetime="2024">2024–2025</time>
+                <article class="card activity-item mb-4">
+                    <div class="card-body">
+                        <div class="activity-item__header mb-3 pb-3 border-bottom">
+                            <h2 class="activity-item__role mb-2">Vacation Bible School (VBS) Volunteer</h2>
+                            <span class="activity-item__org">Community Youth Programs</span>
+                            <time class="activity-item__date" datetime="2024">2024–2025</time>
+                        </div>
+                        <p class="activity-item__outcome mb-0">
+                            Supported youth education and program organization over two summers.
+                        </p>
                     </div>
-                    <p class="activity-item__outcome">
-                        Supported youth education and program organization over two summers.
-                    </p>
                 </article>
             </div>
         </div>
     </section>
     </main>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>

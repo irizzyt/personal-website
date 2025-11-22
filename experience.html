@@ -38,9 +38,15 @@
     
     <!-- LinkedIn -->
     <meta property="linkedin:owner" content="iristurfle">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="thumbnail.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     
     <!-- Structured Data (JSON-LD) -->
@@ -88,56 +94,65 @@
     <div class="signature-line" aria-hidden="true"></div>
 
     <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Iris Turfle</a>
-            <div class="nav-actions">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
-                    <span class="nav-toggle__icon">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </button>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Iris Turfle</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="experience.html">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="WebsiteResume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="nav-list" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="activities.html" class="nav-link">Activities</a></li>
-                <li><a href="experience.html" class="nav-link active">Experience</a></li>
-                <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="WebsiteResume.pdf" class="nav-link" target="_blank" rel="noopener noreferrer" aria-label="Open resume PDF in new tab">Resume</a></li>
-            </ul>
         </div>
     </nav>
 
     <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb" aria-label="Breadcrumb">
+    <nav aria-label="breadcrumb" class="py-3" style="padding-top: 80px !important;">
         <div class="container">
-            <ol class="breadcrumb__list">
-                <li><a href="index.html">Home</a></li>
-                <li aria-current="page">Experience</li>
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Experience</li>
             </ol>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <section class="page-header">
+    <section class="page-header py-5">
         <div class="container">
-            <h1 class="page-header__title">Experience</h1>
-            <p class="page-header__subtitle">Timeline of concrete achievements and outcomes.</p>
+            <h1 class="page-header__title text-center mb-3">Experience</h1>
+            <p class="page-header__subtitle text-center">Timeline of concrete achievements and outcomes.</p>
         </div>
     </section>
 
     <!-- Experience Timeline -->
     <main id="main-content">
-    <section class="experience-timeline" aria-label="Work experience timeline">
+    <section class="experience-timeline py-5" aria-label="Work experience timeline">
         <div class="container">
             <div class="timeline">
                 <!-- Financial Content Creator - 2025–Present -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Financial Content Creator</h2>
                             <span class="timeline__org">TikTok</span>
@@ -147,13 +162,15 @@
                             <li>Create and manage a financial education TikTok account generating over 200K monthly impressions</li>
                             <li>Translate complex financial concepts into accessible content, building financial literacy for diverse audiences</li>
                         </ul>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Finance & Operations Intern - 2025 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Finance & Operations Intern</h2>
                             <span class="timeline__org">Greensboro Grasshoppers</span>
@@ -167,9 +184,10 @@
                 </div>
 
                 <!-- Vice President of Roleplay - 2025-Present -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Vice President of Roleplay</h2>
                             <span class="timeline__org">DECA</span>
@@ -179,13 +197,15 @@
                             <li>Led chapter roleplay preparation, organized workshops, and trained members in business strategy and decision-making</li>
                             <li>Contributed to competitive success and member development</li>
                         </ul>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Treasurer & Competitor - 2024–2025 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Treasurer & Competitor</h2>
                             <span class="timeline__org">Speech and Debate Team</span>
@@ -199,9 +219,10 @@
                 </div>
 
                 <!-- Lead Student Ambassador - 2025 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Lead Student Ambassador</h2>
                             <span class="timeline__org">New Arrivals Institute Film Festival</span>
@@ -214,9 +235,10 @@
                 </div>
 
                 <!-- Junior Literary Magazine Editor - 2025-Present -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Junior Literary Magazine Editor</h2>
                             <span class="timeline__org">Publishing Club</span>
@@ -230,9 +252,10 @@
                 </div>
 
                 <!-- Private English Tutor - 2024–2025 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Private English Tutor</h2>
                             <span class="timeline__org">Independent</span>
@@ -245,9 +268,10 @@
                 </div>
 
                 <!-- First Place Regional Winner - 2024 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">First Place Regional Winner</h2>
                             <span class="timeline__org">The Quill Writing Competition</span>
@@ -260,9 +284,10 @@
                 </div>
 
                 <!-- Volunteer Camp Counselor - 2024 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Volunteer Camp Counselor</h2>
                             <span class="timeline__org">Glenwood Together</span>
@@ -275,9 +300,10 @@
                 </div>
 
                 <!-- Code Club Volunteer and Member - 2025 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Code Club Volunteer and Member</h2>
                             <span class="timeline__org">Summer Technology Programs</span>
@@ -290,9 +316,10 @@
                 </div>
 
                 <!-- Vacation Bible School (VBS) Volunteer - 2024–2025 -->
-                <div class="timeline__entry">
+                <div class="timeline__entry mb-4">
                     <div class="timeline__marker" aria-hidden="true"></div>
-                    <div class="timeline__content">
+                    <div class="card timeline__content">
+                        <div class="card-body">
                         <div class="timeline__header">
                             <h2 class="timeline__title">Vacation Bible School (VBS) Volunteer</h2>
                             <span class="timeline__org">Community Youth Programs</span>
@@ -308,18 +335,18 @@
     </section>
 
     <!-- Skills Section -->
-    <section class="skills" aria-labelledby="skills-heading">
+    <section class="skills py-5" aria-labelledby="skills-heading">
         <div class="container">
-            <h2 id="skills-heading" class="section-heading">Skills</h2>
-            <div class="grid grid--12">
-                <div class="grid__col grid__col--12">
+            <h2 id="skills-heading" class="section-heading mb-4">Skills</h2>
+            <div class="row">
+                <div class="col-12">
                     <div class="skills-category">
-                        <h3 class="skills-category__title">Technical Skills</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Python (Beginner)</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">LaTeX</span>
-                            <span class="skill-tag">Markdown</span>
+                        <h3 class="skills-category__title mb-3">Technical Skills</h3>
+                        <div class="skills-list d-flex flex-wrap gap-2">
+                            <span class="badge bg-secondary">Python (Beginner)</span>
+                            <span class="badge bg-secondary">HTML/CSS</span>
+                            <span class="badge bg-secondary">LaTeX</span>
+                            <span class="badge bg-secondary">Markdown</span>
                         </div>
                     </div>
                 </div>
@@ -328,6 +355,8 @@
     </section>
     </main>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="scripts/main.js"></script>
 </body>
 </html>
