@@ -19,6 +19,12 @@
     initLinkValidation();
     initLoadingState();
     initFallbackTheme();
+    initFooter();
+    initBackToTop();
+    initCopyEmail();
+    initScrollAnimations();
+    initProjectFiltering();
+    initProgressBars();
   }
 
   /**
@@ -241,21 +247,224 @@
   }
 
   /**
-   * Fallback theme detection - Dark mode as default
+   * Enforce dark mode - Always dark mode
    */
   function initFallbackTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    if (currentTheme) return;
+    // Always set to dark mode
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
 
-    // Try localStorage first
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme && (savedTheme === 'dark' || savedTheme === 'light')) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
+
+  /**
+   * Initialize Footer - Set current year
+   */
+  function initFooter() {
+    const currentYearElements = document.querySelectorAll('#current-year');
+    const year = new Date().getFullYear();
+    currentYearElements.forEach(element => {
+      if (element) {
+        element.textContent = year;
+      }
+    });
+  }
+
+  /**
+   * Animate Progress Bars
+   */
+  function initProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+    if (progressBars.length === 0) return;
+
+    const observerOptions = {
+      threshold: 0.5,
+      rootMargin: '0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const progressBar = entry.target;
+          const width = progressBar.getAttribute('aria-valuenow') + '%';
+          progressBar.style.width = width;
+          observer.unobserve(progressBar);
+        }
+      });
+    }, observerOptions);
+
+    progressBars.forEach(bar => {
+      bar.style.width = '0%';
+      observer.observe(bar);
+    });
+  }
+
+  /**
+   * Project Tag Filtering
+   */
+  function initProjectFiltering() {
+    const filterButtons = document.querySelectorAll('.project-filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+    
+    if (filterButtons.length === 0 || projectItems.length === 0) return;
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Update active state
+        filterButtons.forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        const filter = this.getAttribute('data-filter');
+        
+        projectItems.forEach(item => {
+          const tags = item.getAttribute('data-tags').split(',').map(t => t.trim());
+          
+          if (filter === 'all' || tags.includes(filter)) {
+            item.classList.remove('hidden');
+            // Trigger animation
+            item.style.opacity = '0';
+            setTimeout(() => {
+              item.style.opacity = '1';
+            }, 10);
+          } else {
+            item.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  /**
+   * Scroll-triggered Animations
+   */
+  function initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .scale-in');
+    if (animatedElements.length === 0) return;
+
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      animatedElements.forEach(el => el.classList.add('visible'));
       return;
     }
 
-    // Default to dark mode
-    document.documentElement.setAttribute('data-theme', 'dark');
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    animatedElements.forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  /**
+   * Copy Email to Clipboard
+   */
+  function initCopyEmail() {
+    const copyBtn = document.getElementById('copy-email-btn');
+    const emailLink = document.getElementById('email-link');
+    const feedback = document.getElementById('copy-feedback');
+    
+    if (!copyBtn || !emailLink || !feedback) return;
+
+    copyBtn.addEventListener('click', async function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const email = emailLink.textContent.trim();
+      
+      try {
+        await navigator.clipboard.writeText(email);
+        feedback.textContent = 'Email copied to clipboard!';
+        feedback.classList.add('show');
+        
+        // Reset feedback after 2 seconds
+        setTimeout(() => {
+          feedback.classList.remove('show');
+          setTimeout(() => {
+            feedback.textContent = '';
+          }, 300);
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = email;
+        textArea.style.position = 'fixed';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        textArea.select();
+        
+        try {
+          document.execCommand('copy');
+          feedback.textContent = 'Email copied to clipboard!';
+          feedback.classList.add('show');
+          
+          setTimeout(() => {
+            feedback.classList.remove('show');
+            setTimeout(() => {
+              feedback.textContent = '';
+            }, 300);
+          }, 2000);
+        } catch (fallbackErr) {
+          feedback.textContent = 'Failed to copy. Please copy manually.';
+          feedback.classList.add('show');
+        }
+        
+        document.body.removeChild(textArea);
+      }
+    });
+  }
+
+  /**
+   * Back to Top Button
+   */
+  function initBackToTop() {
+    const backToTopButton = document.getElementById('back-to-top');
+    if (!backToTopButton) return;
+
+    // Show/hide button based on scroll position
+    function toggleBackToTop() {
+      if (window.scrollY > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    }
+
+    // Scroll to top when clicked
+    backToTopButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Throttled scroll listener
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          toggleBackToTop();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    toggleBackToTop(); // Check initial state
   }
 
   // Initialize when DOM is ready
