@@ -22,7 +22,8 @@ Production-level portfolio website showcasing financial analysis, product strate
    - Get your form ID and replace `YOUR_FORM_ID` in `scripts/contact.js` line 172
 
 2. **Update Analytics** (optional):
-   - Replace `YOUR_PLAUSIBLE_ID` in `index.html` line 32 with your Plausible Analytics domain
+   - Sign up for free at [GoatCounter.com](https://goatcounter.com) (completely free, privacy-friendly)
+   - Get your site code and replace `YOUR_SITE_CODE` in `index.html` line 54
    - Or remove the analytics script if not needed
 
 3. **Add Favicon Files**:
