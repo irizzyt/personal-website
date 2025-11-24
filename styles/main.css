@@ -283,6 +283,37 @@ body {
   position: relative;
 }
 
+/* Improved carousel fade transition - faster fade out, sequential fade in */
+.highlights-carousel .carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in;
+}
+
+.highlights-carousel .carousel-fade .carousel-item.active {
+  opacity: 1;
+  transition-duration: 0.35s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.highlights-carousel .carousel-fade .carousel-item-next.carousel-item-start,
+.highlights-carousel .carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  transition-duration: 0.35s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease-out;
+}
+
+.highlights-carousel .carousel-fade .active.carousel-item-start,
+.highlights-carousel .carousel-fade .active.carousel-item-end {
+  opacity: 0;
+  transition-duration: 0.25s;
+  transition-delay: 0s;
+  transition-timing-function: ease-in;
+}
+
 .carousel-content {
   padding: var(--space-6) 0;
   min-height: 300px;
@@ -1732,9 +1763,10 @@ h1, h2, h3, h4, h5, h6 {
    ============================================ */
 
 .skills .progress {
-  background-color: var(--color-bg-primary);
+  background-color: rgba(242, 244, 247, 0.1);
   border-radius: 4px;
   overflow: hidden;
+  border: 1px solid rgba(242, 244, 247, 0.15);
 }
 
 .skills .progress-bar {
@@ -1751,6 +1783,21 @@ h1, h2, h3, h4, h5, h6 {
 .skills .fw-semibold {
   color: var(--color-text-primary);
   font-size: 0.95rem;
+}
+
+.skills .text-muted {
+  color: var(--color-text-secondary) !important;
+  opacity: 1 !important;
+  font-weight: 500;
+}
+
+.skills .card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.skills .card-body {
+  color: var(--color-text-primary);
 }
 
 /* ============================================
